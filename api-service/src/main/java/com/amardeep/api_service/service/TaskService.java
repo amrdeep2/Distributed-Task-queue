@@ -23,6 +23,8 @@ public class TaskService {
                 .type(request.getType())
                 .payload(request.getPayload())
                 .status(TaskStatus.PENDING)
+                .maxRetries(3)
+                .retryCount(0)
                 .build();
         System.out.println(listOperations);
         System.out.println("Before pushing to Redis");
